@@ -1,13 +1,18 @@
 import React from 'react';
-// import logo from './logo.svg';
-// import './App.scss';
-import './styles/styles.scss';
+import './styles/styles.sass';
+import Login from './components/Login/Login';
+
+function LoginContainer() {
+  return (
+    <div className="general-login-back">
+      <Login />
+    </div>
+  );
+}
 
 function App() {
   return (
-    <div className="App">
-      <h1>-</h1>
-    </div>
+    <LoginContainer />
   );
 }
 
