@@ -13,7 +13,7 @@ class Login extends React.Component {
     };
   }
 
-  validateForm() {
+  validateForm = () => {
     return this.state.email.length > 0 && this.state.password.length > 0;
   }
 
@@ -104,7 +104,7 @@ class Login extends React.Component {
     }
   }
 
-  render() {
+  render = () => {
     return (
       <div className="general-login-back">
         <div className="container has-text-centered box login-panel" style={{ maxWidth: '400px' }}>

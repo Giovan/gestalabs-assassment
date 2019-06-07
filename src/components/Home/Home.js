@@ -1,6 +1,4 @@
 import React from "react";
-import { Input } from 'reactbulma';
-
 import "./Home.sass";
 
 class Home extends React.Component {
@@ -30,18 +28,10 @@ class Home extends React.Component {
     }
   }
 
-  login = (event) => {
-    event.preventDefault();
-    console.log("login was triggered.");
-    console.log(this.state.email + this.state.password);
+  getUserList = () => {
     if ((this.state.email === '' && this.state.email.length < 6) || (this.state.password === '' && this.state.email.length < 6)) {
       //Show error notification
     } else {
-      const stateData = this.state;
-      const email = this.state.email;
-      const password = this.state.password;
-      console.log('stateData: ' + stateData);
-
       // show loading element
       this.isLoading();
 
@@ -53,20 +43,19 @@ class Home extends React.Component {
         delay: 3
       }; */
 
-      var json_data = {
+      /* var json_data = {
         email: email,
         password: password
       };
       console.log('json_data: ' + json_data);
-      console.log('show loading: ' + this.state.isLoading);
+      console.log('show loading: ' + this.state.isLoading); */
 
-      fetch('https://reqres.in/api/login', {
-        method: 'post',
+      fetch('https://reqres.in/api/users?delay=4', {
+        method: 'get',
         headers: {
             'Accept': 'application/json, text/plain, */*',
             'Content-Type': 'application/json'
-        },
-        body: 'json=' + encodeURIComponent(JSON.stringify(json_data))
+        }
       })
       .then(response => {
         if (response.ok) {
@@ -94,8 +83,10 @@ class Home extends React.Component {
       console.log('hide is loading: ' + this.state.isLoading);
     }
   }
+  componentDidMount = () => {
 
-  render() {
+  }
+  render = () => {
     return (
       <div className="">
           -

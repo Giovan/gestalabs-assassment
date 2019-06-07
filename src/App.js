@@ -13,13 +13,13 @@ class App extends React.Component {
       }
     }
   }
-  componentDidMount() {
+  componentDidMount = () => {
     this.sessionIntervalCheck = setInterval(
       () => this.checkUserSession(),
       1000
     );
   }
-  checkUserSession() {
+  checkUserSession = () => {
     let localStorageToken = '';
     if (localStorage.getItem('token')) {
       localStorageToken = localStorage.getItem('token');
@@ -43,10 +43,10 @@ class App extends React.Component {
       });
     }
   }
-  componentWillUnmount() {
+  componentWillUnmount = () => {
      clearInterval(this.sessionIntervalCheck);
   }
-  render() {
+  render = () => {
     if (this.state.user.isTokenLoaded) {
       return (<MasterBase user={this.state.user} />);
     } else {

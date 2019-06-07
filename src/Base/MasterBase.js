@@ -4,7 +4,7 @@ import Login from '../components/Login/Login';
 import Home from '../components/Home/Home';
 
 class MasterBase extends React.Component {
-    render() {
+    render = () => {
       // const user = this.props.userMaster;
       const user = this.props.user;
       if (user.isLoggedIn) {
