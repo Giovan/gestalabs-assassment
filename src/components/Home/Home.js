@@ -1,20 +1,11 @@
 import React from "react";
 import { Input } from 'reactbulma';
 
-import "./Login.sass";
+import "./Home.sass";
 
-class Login extends React.Component {
+class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      email: "",
-      password: "",
-      isLoading: false
-    };
-  }
-
-  validateForm() {
-    return this.state.email.length > 0 && this.state.password.length > 0;
   }
 
   handleChange = (event) => {
@@ -106,45 +97,11 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="general-login-back">
-        <div className="container has-text-centered box login-panel" style={{ maxWidth: '400px' }}>
-          {/* <div className="container has-text-centered box"> */}
-          <p className="is-size-1">Sign In</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-          <form
-            onSubmit={e => {
-              e.preventDefault();
-              this.handleSubmit();
-            }}>
-            <div className="field">
-              <div className="control">
-                <Input className="input input-width" name="email" type="email" placeholder="email" required value={this.props.email} onChange={this.handleChange} />
-              </div>
-            </div>
-
-            <div className="field">
-              <div className="control">
-                <Input className="input input-width" name="password" type="password" placeholder="password" required value={this.props.password} onChange={this.handleChange}/>
-              </div>
-            </div>
-
-            <div className="field">
-              <div className="control buttons is-centered">
-                <Input className="button is-medium btn-login" type="submit" value="Sign In" onClick={this.login}  />
-              </div>
-            </div>
-
-            <div className="field">
-              <div className="control buttons is-centered">
-                <div>Forgot your password? </div>
-              </div>
-            </div>
-
-          </form>
-        </div>
+      <div className="">
+          -
       </div>
     );
   }
 }
 
-export default Login;
+export default Home;
